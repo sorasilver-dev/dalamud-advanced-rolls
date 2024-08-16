@@ -1,0 +1,25 @@
+[
+    {
+        "Author": "Sora",
+        "Name": "Advanced Rolls",
+        "InternalName": "AdvancedRolls",
+        "AssemblyVersion": "0.0.0.1",
+        "Description": "This plugins allows you to make advanced dice rolls : You can roll between two numbers and do DnD dice rolls (1d20+5 for example). This plugin is primarily intended for roleplayers.",
+        "ApplicableVersion": "any",
+        "RepoUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls",
+        "Tags": [
+            "rolls",
+            "roleplaying",
+            "dnd",
+            "d&d"
+        ],
+        "DalamudApiLevel": 10,
+        "LoadRequiredState": 0,
+        "LoadSync": false,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "IconUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/blob/master/AdvancedRolls/images/icon.png",
+        "Punchline": "cuz Yoship don't know how to make good dices rolls",
+        "AcceptsFeedback": true
+    }
+]

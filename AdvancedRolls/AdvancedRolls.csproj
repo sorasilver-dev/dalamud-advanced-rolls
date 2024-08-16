@@ -3,7 +3,7 @@
   <Import Project="Dalamud.Plugin.Bootstrap.targets" />
 
   <PropertyGroup>
-    <Version>0.0.0.1</Version>
+    <Version>1.0.0</Version>
     <Description>A plugin that make you able to make advanced rolls for roleplaying purposes.</Description>
     <PackageProjectUrl>https://github.com/sorasilver-dev/dalamud-advanced-rolls</PackageProjectUrl>
     <PackageLicenseExpression>AGPL-3.0-or-later</PackageLicenseExpression>

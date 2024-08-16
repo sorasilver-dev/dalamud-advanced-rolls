@@ -1,4 +1,5 @@
-{
+[
+    {
     "Author": "Sora",
     "Name": "Advanced Rolls",
     "Punchline": "cuz Yoship don't know how to make good dices rolls",
@@ -25,5 +26,5 @@
     "CanUnloadAsync": false,
     "LoadPriority": 0,
     "AcceptsFeedback": true
-}
-
+    }
+]

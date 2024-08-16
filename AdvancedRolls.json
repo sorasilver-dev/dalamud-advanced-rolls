@@ -1,29 +1,31 @@
-{
-    "Author": "Sora",
-    "Name": "Advanced Rolls",
-    "Punchline": "cuz Yoship don't know how to make good dices rolls",
-    "Description": "This plugin allows you to make advanced rolls. You can roll between two numbers (20 and 120 for example) and do DnD dice rolls (1d20+5 for example). This plugin is primarily intended for roleplayers. \nNOTE: The result will be shown in your system message. NO ONE BUT YOU will see the rolls.",
-    "InternalName": "AdvancedRolls",
-    "AssemblyVersion": "1.0.0.1",
-    "TestingAssemblyVersion": "1.0.0.1",
-    "RepoUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls",
-    "ApplicableVersion": "any",
-    "DalamudApiLevel": 10,
-    "IsHide": "False",
-    "IsTestingExclusive": "False",
-    "LoadSync": false,
-    "DownloadLinkInstall": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
-    "DownloadLinkTesting": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
-    "DownloadLinkUpdate": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
-    "Tags": [
-        "rolls",
-        "roleplaying",
-        "dnd",
-        "d&d"
-    ],
-    "IconUrl": "https://raw.githubusercontent.com/sorasilver-dev/dalamud-advanced-rolls/master/AdvancedRolls/images/icon.png",
-    "LoadRequiredState": 0,
-    "CanUnloadAsync": false,
-    "LoadPriority": 0,
-    "AcceptsFeedback": true
-}
+[
+    {
+        "Author": "Sora",
+        "Name": "Advanced Rolls",
+        "Punchline": "cuz Yoship don't know how to make good dices rolls",
+        "Description": "This plugin allows you to make advanced rolls. You can roll between two numbers (20 and 120 for example) and do DnD dice rolls (1d20+5 for example). This plugin is primarily intended for roleplayers. \nNOTE: The result will be shown in your system message. NO ONE BUT YOU will see the rolls.",
+        "InternalName": "AdvancedRolls",
+        "AssemblyVersion": "1.0.0.1",
+        "TestingAssemblyVersion": "1.0.0.1",
+        "RepoUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls",
+        "ApplicableVersion": "any",
+        "DalamudApiLevel": 10,
+        "IsHide": "False",
+        "IsTestingExclusive": "False",
+        "LoadSync": false,
+        "DownloadLinkInstall": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
+        "DownloadLinkTesting": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
+        "DownloadLinkUpdate": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.1/AdvancedRolls-v1.0.0.1.zip",
+        "Tags": [
+            "rolls",
+            "roleplaying",
+            "dnd",
+            "d&d"
+        ],
+        "IconUrl": "https://raw.githubusercontent.com/sorasilver-dev/dalamud-advanced-rolls/master/AdvancedRolls/images/icon.png",
+        "LoadRequiredState": 0,
+        "CanUnloadAsync": false,
+        "LoadPriority": 0,
+        "AcceptsFeedback": true
+    }
+]

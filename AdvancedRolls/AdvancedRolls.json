@@ -1,24 +1,29 @@
-[
-    {
-        "Author": "Sora",
-        "Name": "Advanced Rolls",
-        "InternalName": "AdvancedRolls",
-        "AssemblyVersion": "0.0.0.1",
-        "Description": "This plugins allows you to make advanced dice rolls : You can roll between two numbers and do DnD dice rolls (1d20+5 for example). This plugin is primarily intended for roleplayers.",
-        "ApplicableVersion": "any",
-        "RepoUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls",
-        "Tags": [
-            "rolls",
-            "roleplaying",
-            "dnd",
-            "d&d"
-        ],
-        "DalamudApiLevel": 10,
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "CanUnloadAsync": false,
-        "LoadPriority": 0,
-        "Punchline": "cuz Yoship don't know how to make good dices rolls",
-        "AcceptsFeedback": true
-    }
-]
+{
+    "Author": "Sora",
+    "Name": "Advanced Rolls",
+    "Punchline": "cuz Yoship don't know how to make good dices rolls",
+    "Description": "This plugins allows you to make advanced dice rolls : You can roll between two numbers and do DnD dice rolls (1d20+5 for example). This plugin is primarily intended for roleplayers.",
+    "InternalName": "AdvancedRolls",
+    "AssemblyVersion": "0.0.0.1",
+    "TestingAssemblyVersion": "0.0.0.1",
+    "RepoUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls",
+    "ApplicableVersion": "any",
+    "DalamudApiLevel": 10,
+    "IsHide": "False",
+    "IsTestingExclusive": "False",
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v0.0.0.1.zip",
+    "DownloadLinkTesting": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v0.0.0.1.zip",
+    "DownloadLinkUpdate": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v0.0.0.1.zip",
+    "Tags": [
+        "rolls",
+        "roleplaying",
+        "dnd",
+        "d&d"
+    ],
+    "LoadRequiredState": 0,
+    "CanUnloadAsync": false,
+    "LoadPriority": 0,
+    "AcceptsFeedback": true
+}
+

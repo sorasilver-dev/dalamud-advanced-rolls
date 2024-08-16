@@ -19,8 +19,6 @@ public class Plugin : IDalamudPlugin
     public static Configuration? PluginConfig { get; set; }
 
     private PluginCommandManager<Plugin> CommandManager;
-    //private PluginUI ui;
-
     
     public Plugin(IDalamudPluginInterface pluginInterface, IChatGui chat, IPartyList partyList, ICommandManager commands)
     {
@@ -29,16 +27,6 @@ public class Plugin : IDalamudPlugin
 
         PluginConfig = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
         PluginConfig.Initialize(PluginInterface);
-
-        /*
-        ui = new PluginUI();
-        PluginInterface.UiBuilder.Draw += new System.Action(ui.Draw);
-        PluginInterface.UiBuilder.OpenConfigUi += () =>
-        {
-            PluginUI ui = this.ui;
-            ui.IsVisible = !ui.IsVisible;
-        };
-        */
 
         CommandManager = new PluginCommandManager<Plugin>(this, commands);
     }
@@ -50,24 +38,33 @@ public class Plugin : IDalamudPlugin
     [HelpMessage("Roll an advanced dice. You can do a min/max roll (Ex: /ar 20 120) or a custom roll, including modifier (Ex: /ar 1d20+5)")]
     public void Roll(string command, string args)
     {
-        // Verify if its DnD arguments
-        if (TryParseDiceExpression(args, out int result))
+        if (IsDiceExpression(args))
         {
-            Chat.Print($"Result of the roll {args}: {result}");
+            // DnD Roll
+            HandleDiceRoll(args);
+        }
+        else if(IsMinMaxExpression(args))
+        {
+            // Min/Max Roll
+            HandleMinMaxRoll(args);
+        }
+        else
+        {
+            Chat.PrintError("Invalid format. Ex: /ar 20 120 or /ar 1d20");
             return;
         }
-
-        // If not, roll with min/max logic
+    }
+    private void HandleMinMaxRoll(string args)
+    {
         var splitArgs = args.Split(' ');
         if (splitArgs.Length != 2 ||
             !int.TryParse(splitArgs[0], out int min) ||
             !int.TryParse(splitArgs[1], out int max))
         {
-            Chat.PrintError("Please enter two valid numbers or a dice expression. Ex: /ar 20 120 or /ar 1d20+5");
+            Chat.PrintError("Please enter two valid numbers. Ex: /ar 20 120");
             return;
         }
 
-        // Valider les nombres
         if (min >= max)
         {
             Chat.PrintError("The first number must be lower than the second number. Ex: /ar 20 120");
@@ -82,67 +79,75 @@ public class Plugin : IDalamudPlugin
 
         if (min > 999 || max > 999)
         {
-            Chat.PrintError("The numbers must be lower or equal than 999. Ex: /ar 20 120");
+            Chat.PrintError("The numbers must be lower or equal to 999. Ex: /ar 20 120");
             return;
         }
 
-        // Générer un nombre aléatoire
         var random = new Random();
         int rollResult = random.Next(min, max + 1);
 
         Chat.Print($"Result of the roll between {min} and {max}: {rollResult}");
     }
 
-    private bool TryParseDiceExpression(string input, out int result)
+    private bool IsDiceExpression(string input)
     {
-        result = 0;
+        // Regex to check if its a DnD expression
+        return System.Text.RegularExpressions.Regex.IsMatch(input, @"^\d+d\d+([+-]\d+)?$");
+    }private bool IsMinMaxExpression(string input)
+    {
+        // Regex to check if its a DnD expression
+        return System.Text.RegularExpressions.Regex.IsMatch(input, @"^(\d+)\s+(\d+)$");
+    }
+    private void HandleDiceRoll(string args)
+    {
+        var match = System.Text.RegularExpressions.Regex.Match(args, @"^(\d+)d(\d+)([+-]\d+)?$");
+
+        var result = 0;
         var random = new Random();
+        int numberOfDice = int.Parse(match.Groups[1].Value);
+        int diceSides = int.Parse(match.Groups[2].Value);
+        int modifier = 0;
 
-        var match = System.Text.RegularExpressions.Regex.Match(input, @"(\d+)d(\d+)([+-]\d+)?");
-
-        if (match.Success)
+        if (match.Groups[3].Success)
         {
-            int numberOfDice = int.Parse(match.Groups[1].Value);
-            int diceSides = int.Parse(match.Groups[2].Value);
-            int modifier = match.Groups[3].Success ? int.Parse(match.Groups[3].Value) : 0;
-
-
-            for (int i = 0; i < numberOfDice; i++)
-            {
-                result += random.Next(1, diceSides + 1);
-            }
-
-            result += modifier;
-
-            return true;
+            modifier = int.Parse(match.Groups[3].Value);
         }
 
-        return false;
-    }
 
-    /*
-    [Command("/config")]
-    [HelpMessage("Jeter un dé avec une valeur minimal et une valeur maximale. Ex: /roll 20 120")]
-    public void Config(string command, string args)
-    {
-        ui.IsVisible = !ui.IsVisible;
+        if (numberOfDice > 100)
+        {
+            Chat.PrintError("The number of dices must be lower or equal to 100. Ex: /ar 1d20");
+            return;
+        }
+
+        if (diceSides > 999)
+        {
+            Chat.PrintError("The number of sides must be lower or equal to 999. Ex: /ar 1d20");
+            return;
+        }
+
+        if (modifier > 999)
+        {
+            Chat.PrintError("The modifier must be lower or equal to 999. Ex: /ar 1d20+5");
+            return;
+        }
+
+        for (int i = 0; i < numberOfDice; i++)
+        {
+            result += random.Next(1, diceSides + 1);
+        }
+
+        result += modifier;
+
+        Chat.Print($"Result of the roll {args}: {result}");
+
     }
-    */
 
     public void Dispose()
     {
         CommandManager.Dispose();
 
         PluginInterface.SavePluginConfig(PluginConfig);
-
-        /*
-        PluginInterface.UiBuilder.Draw -= ui.Draw;
-        PluginInterface.UiBuilder.OpenConfigUi -= () =>
-        {
-            PluginUI ui = this.ui;
-            ui.IsVisible = !ui.IsVisible;
-        };
-        */
     }
 
 }

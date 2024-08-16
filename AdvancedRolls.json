@@ -13,9 +13,9 @@
         "IsHide": "False",
         "IsTestingExclusive": "False",
         "LoadSync": false,
-        "DownloadLinkInstall": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v1.0.0.0.zip",
-        "DownloadLinkTesting": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v1.0.0.0.zip",
-        "DownloadLinkUpdate": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v0.0.0.1/AdvancedRoll-v1.0.0.0.zip",
+        "DownloadLinkInstall": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.0/AdvancedRoll-v1.0.0.0.zip",
+        "DownloadLinkTesting": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.0/AdvancedRoll-v1.0.0.0.zip",
+        "DownloadLinkUpdate": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/releases/download/v1.0.0.0/AdvancedRoll-v1.0.0.0.zip",
         "Tags": [
             "rolls",
             "roleplaying",

@@ -18,7 +18,6 @@
         "LoadSync": false,
         "CanUnloadAsync": false,
         "LoadPriority": 0,
-        "IconUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/blob/master/AdvancedRolls/images/icon.png",
         "Punchline": "cuz Yoship don't know how to make good dices rolls",
         "AcceptsFeedback": true
     }

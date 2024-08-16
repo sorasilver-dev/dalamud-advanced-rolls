@@ -22,7 +22,6 @@
             "dnd",
             "d&d"
         ],
-        "IconUrl": "https://github.com/sorasilver-dev/dalamud-advanced-rolls/blob/master/AdvancedRolls/images/icon.png",
         "LoadRequiredState": 0,
         "CanUnloadAsync": false,
         "LoadPriority": 0,
